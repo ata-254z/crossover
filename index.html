@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Windows_Media_Center_2006-2015.png" type="image/x-icon">
+    <title>ꦮꦶꦤ꧀ꦢꦺꦴꦮ꧀ꦩꦺꦢꦶꦲꦥ꧀ꦭꦪꦺꦂ</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: lawngreen;
+        }
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        iframe {
+            height: 100%;
+            width: 100%;
+            border: none;
+        }
+        section {
+            height: 100%;
+            width: 100%;
+            background: #000;
+        }
+        .Info-jadwal {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 32px;
+            background: rgba(22, 13, 38, 0.9);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 215pt;
+            height: 296pt;
+            padding: 4pt;
+            color: #ffffff;
+            z-index: 1;
+        }
+        .blok {
+            margin: 14pt;
+            padding: 0;
+        }
+        .tutup {
+            cursor: pointer;
+            background-color: #b3193a;
+            color: #160d26;
+            box-shadow: 3px 4px 16px rgba(179, 25, 58, 0.45);
+            border: none;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 24pt;
+            width: 24pt;
+            position: absolute;
+            left: calc(0% + 15px);
+            top: calc(0% + 15px);
+        }
+        .ground {
+            border-radius: 24px 80% 24px 24px;
+            background-color: rgb(22, 13, 38);
+            width: 215pt;
+            height: 184pt;
+            position: absolute;
+            bottom: 6pt;
+            z-index: 3;
+        }
+        .pont {
+            font-family: robot;
+            font-size: medium;
+            font-weight: 400;
+            color: #debc7e;
+        }
+        .medsos-button {
+            height: 28pt;
+            width: 28pt;
+            border: none;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #b3193a;
+            box-shadow: 3px 4px 16px rgba(179, 25, 58, 0.45);
+        }
+        .medsos-button:hover {
+            transform: translateY(-3px);
+        }
+        .medsos {
+            width: 100%;
+            height: 40pt;
+            padding-left: 20pt;
+            padding-right: 5pt;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+            gap: 14pt;
+            position: absolute;
+            bottom: 14pt;
+        }
+        .icon-medsos {
+            height: 100%;
+            width: 100%;
+        }
+        .scr {
+            color: #b3193a;
+            text-decoration: none;
+            font-weight: 900;
+            font-family: robot;
+        }
+        .pustaka {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        @font-face {
+            font-family: Bebas;
+            src: url(Bebas-Regular.otf);
+        }
+        @font-face {
+            font-family: Roboto-Condensed;
+            src: url(Roboto.ttf);
+        }
+        .nama {
+            color: #b3193a;
+            font-family: Bebas;
+            font-weight: 400;
+            font-size: 40pt;
+            position: absolute;
+            top: 40pt;
+            left: 26pt;
+            z-index: 2;
+        }
+        .garis {
+            width: 50pt;
+            height: 2px;
+            background-color: #b3193a;
+            z-index: 2;
+            position: absolute;
+            top: 84pt;
+            left: 26pt;
+        }
+        .kelas {
+            color: #b3193a;
+            font-family: Roboto-Condensed;
+            font-size: 12pt;
+            position: absolute;
+            top: 88pt;
+            left: 26pt;
+            z-index: 2;
+        }
+        .figure {
+            z-index: 2;
+            height: 170pt;
+            width: 104pt;
+            position: absolute;
+            bottom: 114pt;
+            right: 16pt;
+        }
+        .spasi {
+            height: 10pt;
+        }
+        @font-face {
+            font-family: robot;
+            src: url(Roboto-Regular.ttf);
+        }
+        #tombol {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            transform: translate(5px,5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            cursor: pointer;
+            height: auto;
+            width: auto;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 26px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .windows {
+            content: url("Windows_Media_Center_2006-2015.png");
+            width: 24pt;
+            height: 24pt;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <script>
+        function Tutup() {
+            document.getElementById("popup").style.display="none";
+        }
+        function pesan() {
+            document.getElementById("popup").style.display="flex";
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <iframe src="https://drive.google.com/file/d/1H1Po1vTJFmj9Tyr0QJ91uGWSjUUIcBdv/preview" allow="autoplay"></iframe>        
+    </section>
+    <button type="button" onclick="pesan()" id="tombol"><img class="windows">Info Video</button>
+    <main class="Info-jadwal" id="popup">
+        <nav class="topbar">
+            <button type="button" onclick="Tutup()" class="tutup"><span class="material-symbols-rounded size-20">close</span></button>
+        </nav>
+        <font class="nama">ATA</font><br><div class="garis"></div><br><font class="kelas">X TKJ B</font>
+        <img src="figure.png" alt="figure" class="figure">
+        <article class="ground">
+            <blockquote class="blok">
+                <font class="pont">Video Praktek<br>Kabel Crossover<br>tahun 2024</font>
+                <div class="spasi"></div>
+                <div>
+                    <font class="pont">Sumber ikon:<br>
+                        <div style="display: flex; justify-content: baseline; align-items: center; gap: 6px;">
+                            <img src="materialIcons.png" alt="materialIcons" style="height: 12px; width: 18px;">
+                            <a href="https://fonts.google.com/icons?icon.style=Rounded" target="_blank" class="scr">Material Symbols & Icons</a>
+                        </div>
+                        <div style="display: flex; justify-content: baseline; align-items: center; gap: 7px; margin-left: 3px;">
+                            <img src="icons8.svg" alt="icons8" style="height: 14px; width: 14px;">
+                            <a href="https://icons8.com/icons" target="_blank" class="scr">Icons8</a>
+                        </div>
+                    </font>
+                </div>
+            </blockquote>
+            <article class="medsos">
+                <a href="http://wa.me/qr/IISMW4IADWNRL1" target="_blank">
+                    <button type="button" class="medsos-button button fon" style="cursor: pointer;">
+                        <img src="whatsapp.svg" alt="whatsapp" class="icon-medsos">
+                    </button>
+                </a>
+                <a href="https://github.com/SKAONET-TKJ-27" target="_blank">
+                    <button type="button" class="medsos-button button fon" style="cursor: pointer;">
+                        <img src="github.svg" alt="github" class="icon-medsos">
+                    </button>
+                </a>
+                <a href="http://" target="_blank">
+                    <button type="button" class="medsos-button button fon" style="cursor: not-allowed;">
+                        <img src="instagram.svg" alt="instagram" class="icon-medsos">
+                    </button>
+                </a>
+                <a href="http://" target="_blank">
+                    <button type="button" class="medsos-button button fon" style="cursor: not-allowed;">
+                        <img src="tiktok.svg" alt="tiktok" class="icon-medsos">
+                    </button>
+                </a>
+            </article>
+        </article>
+    </main>
+</body>
+</html>
